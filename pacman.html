@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pacman-narencce</title>
+    <style>
+        body{
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%) 
+        
+
+        }  
+        div.roww div{
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            display: inline-block;
+            
+    
+        }
+
+        div.brick{
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj4ycwND4OTqabVNAUk56SzC1Ubfup1uGkx7Jnr50xPg0HmHpTq4oGKy5xihFczsiKflY&usqp=CAU');
+        background-repeat: no-repeat;
+        background-size:cover;
+        
+        }
+        div.coin{
+        background-image: url('https://cdna.artstation.com/p/assets/images/images/029/397/134/original/bryan-taylor-skull-coin.gif?1597405900');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        }
+        div.cherry{
+        background-image: url('http://www.classicgaming.cc/classics/pac-man/images/icons/pixel-fruit-cherry-128x128.png/.');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        }
+        div.blankk{
+       
+        }
+        div#score{
+        border:1px solid white;
+        width: 100px;
+        height: 50px;   
+        position: absolute;
+        color:wheat;
+        text-align: center;
+        padding-top: 30px;
+        top: -100px;
+        left:38%;
+            margin-right: -50%;
+            
+
+       
+        }
+        div#pacman{
+        background-image: url('img/pacman.gif');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        }
+       
+    </style>
+</head>
+<body">
+    
+    <div id="pacman"> </div>
+        <div id="WORLD"></div>
+        <div id="score">0</div>
+       
+</body>
+<script>
+    var world = [
+     [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+     [2,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,2,2,2,2,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+     [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+     [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
+    ];
+  
+
+     
+     var Pcman = {
+        leftValue:1,
+        topValue: 1,
+        
+     }
+  
+    function displayWorld() {
+        var output = '';
+        for(var i=0; i<world.length; i++) {
+            output += '\n<div class="roww">';
+            for(var j=0; j < world[i].length; j++){
+
+                if(world[i][j] ==2){
+                    output += '\n<div class="brick"></div>';
+                }
+                else if(world[i][j] == 1){
+                    output += '\n<div class="coin"></div>';
+                }
+                else if(world[i][j] == 0){
+                    output += '\n<div class="blankk"></div>';
+                }
+            }
+            output += "</div>";   
+        }
+       console.log(output);
+        document.getElementById('WORLD').innerHTML = output;
+      
+    }
+
+function displayPacman(dir){
+    document.getElementById("pacman").style.backgroundImage =  "url('https://nar3nce.000webhostapp.com/pacman_img/"+dir+".gif')";
+    document.getElementById("pacman").style.left = Pcman.leftValue*26+"px";
+    document.getElementById("pacman").style.top =  Pcman.topValue*26+"px";
+    
+}
+
+var score = 0;
+function displayScore(){
+    document.getElementById("score").innerHTML = score;
+}
+
+
+displayPacman("right");
+displayWorld();
+displayScore();
+
+
+
+document.onkeydown = function(e){
+    console.log(e);
+    if(e.keyCode == 37 && world[Pcman.topValue][Pcman.leftValue-1] != 2) { // LEFT
+        Pcman.leftValue--;
+        displayPacman("left");
+    }
+    else if (e.keyCode == 39 && world[Pcman.topValue][Pcman.leftValue+1] != 2) { // RIGHT
+        Pcman.leftValue++;
+        displayPacman("right");
+    }
+    else if (e.keyCode == 40 && world[Pcman.topValue+1][Pcman.leftValue] != 2) { // DOWN
+        Pcman.topValue++;
+        displayPacman("down");
+    }
+    else if (e.keyCode == 38 && world[Pcman.topValue-1][Pcman.leftValue] != 2) { // up
+        Pcman.topValue--;
+        displayPacman("up");
+        score += 10;
+       
+    }
+    
+    if(world[Pcman.topValue][Pcman.leftValue] == 1){
+        world[Pcman.topValue][Pcman.leftValue] = 0;
+        displayWorld();
+       score+= 10;
+       displayScore();
+    }
+
+    
+}
+</script>
+</html>

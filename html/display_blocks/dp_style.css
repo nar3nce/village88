@@ -1,0 +1,39 @@
+body{
+    width: 720px;
+    margin: 0px auto;
+}
+.container{
+    background-color:rgb(213,210,174);
+    padding: 10px;
+    overflow: hidden;
+    height: auto;
+}
+.header img {
+    width: 80px;
+
+}
+.header h2{
+    display: inline-block;
+}
+.header{
+    
+    margin-left: 150px
+    
+}
+
+.style1{
+    width: 100px;
+    border: solid 3px black;
+    background-color:rgb(130,180,238);
+    padding: 10px;
+    display: inline;
+    margin:5px;
+}
+.style2{
+    width: 100px;
+    border: solid 3px black;
+    background-color:rgb(243,104,112);
+    padding: 10px;
+    display: inline;
+    margin:5px;
+}

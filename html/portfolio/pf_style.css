@@ -1,0 +1,116 @@
+#wrapper{
+    width: 950px;
+    background-color:rgb(53,35,41);
+    margin: 0px auto;
+    padding: 10px;
+    overflow: hidden;
+    height: auto;
+   }
+#header{
+  background:rgb(245,245,245);
+  width: 940px;
+  margin: 0px auto;
+  padding: 1px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  height:50px;
+}
+
+#section1{
+    display: inline;
+  }
+  
+#section1 img{
+    width: 400px;
+    margin: 20px;
+    border: 5px solid rgb(188,188,188);
+    float: left;
+    height: 265px;
+    margin-left: 12px;
+}
+#section1 div{
+    background-color:rgb(245,242,245);
+    width: 465px;
+    float: right;
+    padding: 10px;
+    border: 5px solid rgb(188,188,188);
+    margin-top: -30px;
+    border-top: none;
+    margin-right: 13px;
+}
+#section1 h2{
+    background-color:rgb(139,137,150);
+    width: 455px;
+    float: right;
+    padding: 15px;
+    height: auto;
+    border: 5px solid rgb(188,188,188);
+    color: rgb(254,253,250);
+    margin-right: 13px;
+}
+
+#section2{
+    
+}
+
+#section2 div{
+    float: left;
+}
+#section2 h2{
+    background-color:rgb(139,137,150);
+    width: 265px;
+    float: left;
+    padding: 10px;
+    height: auto;
+    color: rgb(254,253,250);
+    margin: 12px;
+}
+#section2 h3{
+    background-color:rgb(139,137,150);
+    width: 265px;
+    padding: 10px;
+    height: 14px;
+    color: rgb(254,253,250);
+    margin: 12px;
+    display: inline;
+    float: left;
+    margin-top: -18px;
+}
+#section2 img{
+    width: 284px;
+    padding: 11px;
+    margin-top: -30px;
+}
+#section2 p{
+    background-color:rgb(245,242,245);
+    width: 266px;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    padding-bottom: 30px;
+    margin-top: -16px;
+}
+.circle_img{
+    height: 45px;
+    margin: 2px;
+    
+}
+
+
+#section4 div{
+ display: inline-block;
+ width: 286px;
+ background-color:rgb(245,242,245);
+ margin: 15px;
+ margin-left: 8px;
+ margin-top: -13px;
+}
+#footer{
+    border-radius: 25px;
+    background:rgb(93,102,115);
+    padding: 10px;
+    height: 14px;
+    color: rgb(189,205,220);
+    display: block;
+    margin-top: 24px;
+}

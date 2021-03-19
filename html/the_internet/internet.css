@@ -1,0 +1,173 @@
+body{
+    width: 970px;
+    margin: 0px auto;
+}
+.container{
+    background-color:rgb(255,255,255);
+    height: auto;
+}
+.divider1{
+    border-top: 1px solid #333;
+    width: 100%;
+    height: 1px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.divider2{
+    border-top: 1px solid #333;
+    width: 100%;
+    height: 1px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.header{
+    background-color:white;
+}
+    .header img {
+        width: 80px;
+        margin-left: 4px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .header h1 {
+        vertical-align: top;
+        display: inline-block;
+        margin-left: 140px;
+        color: rgb(71,71,71);
+        vertical-align: middle;
+        margin-left: 0px;
+    }
+    .header span{
+        background-color: rgb(70,123,168);
+        display: block;
+        margin-top: -40px;
+    }
+    .header p{
+        color: rgb(251,252,253);
+        margin-left: 0px;
+        font-size: 25px;
+        padding: 7px;
+        margin-left: 10px;
+        margin-bottom: 0px
+    }
+
+.sidebar{
+    width: 250px;
+    background-color: rgb(246,246,246);
+    padding: 5px;
+    display: inline-block;
+}
+    .sidebar .a1{
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(59,120,172);
+        display: block;
+        margin: 5px;
+        color:white;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+    .sidebar .a2{
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(238,132,0);
+        display: block;
+        margin: 5px;
+        color:white;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+    .sidebar .a3{
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(34,198,223);
+        display: block;
+        margin: 5px;
+        color:white;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+    .sidebar .ninja{
+        background: url('images/ad_background.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 10px;
+        align-items: center;
+    }
+    .sidebar .ninja h1{
+        color: white;
+        text-align: center;
+    }
+    .sidebar .ninja img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 45%;
+    }
+
+.nav{
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgb(246,246,246);
+}
+    .nav img{
+        height: 20px;
+    }
+    .nav .phone{
+        height: 50px;
+        vertical-align: middle;
+        margin-left: 390px;
+        
+    }
+    .nav h1 {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 25px;
+    }
+
+
+.content{
+    background-color: white;
+    width: 706px;
+    margin-top: 0px;
+}
+    .content h2{
+        margin-top: -30px;
+        color: rgb(44,108,162);
+    }
+    .content .client{
+        margin-top: 20px;
+        width: 300px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+    }
+    .content .html_css{
+        border: solid 5px blue;
+    }
+    .content .html_css img{
+        width: 200px;
+        height: auto;
+        display: inline-block;
+        margin: 20px;
+    }
+    .content .html_css h2{
+        width: 450px;
+        height: auto;
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: -270px;
+    }
+    .content .html_css p{
+        width: 450;
+        height: auto;
+        display: block;
+        margin-left: 245px;
+        margin-top: -130px;
+        margin-bottom: 30px;
+    }

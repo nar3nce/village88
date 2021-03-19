@@ -1,0 +1,92 @@
+body{
+    width: 940px;
+    margin: 0px auto;
+}
+
+.header{
+    background:rgb(245,245,245);
+    margin: -17px auto;
+    padding: 1px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    height:40px;
+    margin-bottom: 1px;
+}
+.header h1 {
+    display: inline-block;
+}
+.header h2 {
+    display: inline-block;
+    margin-left: 350px;
+}
+
+.container{
+    background-color:rgb(53,35,41);
+    padding: 10px;
+    overflow: hidden;
+    height: auto;
+}
+
+
+.section1 img{
+    background-color: blue; 
+    display: inline-block;
+    width: 400px;
+    outline: 5px solid rgb(188,188,188);
+    height: auto;
+    vertical-align: top;
+    margin: 20px;
+}
+.right{
+    background-color:rgb(245,242,245);
+    display: inline-block;
+    width: 400px;
+    height: 268px;
+    vertical-align: top;
+    margin: 20px;
+}
+.section1 h2{
+    background-color: rgb(148,147,157); 
+    margin-top: -1px;
+    padding: 10px;
+    color: rgb(255,255,255);
+}
+
+
+.section1 p{
+    padding: 10px;
+}
+
+.card{
+    background-color:rgb(245,242,245);
+    display: inline-block;
+    width: 250px;
+    height: auto;
+    vertical-align: top;
+    margin: 20px;
+}
+.section2 h2{
+    background-color: rgb(148,147,157); 
+    margin-top: -1px;
+    padding: 10px;
+    color: rgb(255,255,255);
+}
+.section2 h3{
+    background-color: rgb(148,147,157); 
+    margin-top: -1px;
+    padding: 5px;
+    color: rgb(255,255,255);
+}
+.section2 img{
+    width: 250px;
+    margin-top: -20px;
+}
+.section2 p{
+    padding: 10px;
+}
+
+.img2 img{ 
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+}
