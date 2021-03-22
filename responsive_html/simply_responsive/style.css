@@ -1,0 +1,29 @@
+h1{
+    padding: 10px;
+    background-color: #B3B3B3;
+}
+p{
+    padding: 10px;
+    background-color: #CCCCCC;
+    margin-top: -15px;
+}
+@media only screen and (max-width: 480px){
+    /* we will set these stylings only if the device is a screen with a width of 480px or less */
+    p{
+        background-color: #7e9118;;
+    }
+}
+
+@media only screen and (min-width: 481px){
+    /* we will set these stylings only if the device is a screen with a width of 480px or less */
+    p{
+        background-color: #201891;;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    /* we will set these stylings only if the device is a screen with a width of 480px or less */
+    p{
+        background-color: #570c25;;
+    }
+}
