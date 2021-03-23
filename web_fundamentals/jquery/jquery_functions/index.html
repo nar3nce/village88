@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="click">
+        <h1>.click function</h1>
+        <h2 id="click">CLICK</h2>
+        <p id="p_click">click the button</p>
+        <span></span>
+        
+        <h1>.hide function</h1>
+        <h2 id="hide">HIDE</h2>
+        <p id="p_hide">click the button to hide this paragraph</p>
+        <span></span>
+        
+        <h1>.toggle function</h1>
+        <h2 id="toggle">TOGGLE</h2>
+        <p id="p_toggle">click the button</p>
+        <span></span>
+        
+        <h1>.slide functions</h1>
+        <h2 id="slideUp">SLIDEDOWN</h2>
+        <h2 id="slideDown">SLIDEUP</h2>
+        <h2 id="slideToggle">SLIDETOGGLE</h2>
+        <p id="slide">click the button to slide</p>
+        <span></span>
+
+        <h1>.fade functions</h1>
+        <h2 id="fadeIn">FADEIN</h2>
+        <h2 id="fadeOut">FADEOUT</h2>
+        <p id="fade">click the button to fade</p>
+        <span></span>
+
+        <h1>.addClass function</h1>
+        <h2 id="addClass">ADDCLASS</h2>
+        <p id="p_addClass">click the button to add class</p>
+        <span></span>
+
+        <h1>before, after, append functions</h1>
+        <h2 id="before">BEFORE</h2>
+        <h2 id="after">AFTER</h2>
+        <h2 id="append">APPEND</h2>
+        <p id="baa">click the button to to see the functions</p>
+        <span></span>
+
+        <h1>.html function</h1>
+        <h2 id="html">HTML</h2>
+        <p id="p_html">click the button to Change the html value</p>
+        <span></span>
+
+        <h1>.attr function</h1>
+        <h2 id="attr">ATTR</h2>
+        <p id="p_attr">click the button to add attr</p>
+        <span></span>
+
+        <h1>.val function</h1>
+        <h2 id="val">VAL</h2>
+        <input id="p_val" type="text" name="" id="">
+        <p id="">click the button to add value</p>
+        <span></span>
+
+        <h1>.text function</h1>
+        <h2 id="text">TEXT</h2>
+        <p id="p_text">click the button to change the text</p>
+        <span></span>
+    </div>
+<script>
+    $(document).ready(function(){
+        $("#click").click(function(){
+            $("#p_click").html("<p> clicked! </p>"); $("#p_click").css("color","rgb(4, 68, 25)");
+        });
+        $("#hide").click(function(){
+            $("#p_hide").hide();  $(this).after( "<p></p>" );
+        });
+        $("#toggle").click(function(){
+            $("#p_toggle").toggle(); $(this).after( "<p></p>" );
+        });
+        $("#slideUp").click(function(){
+            $("#slide").slideUp();
+        });
+        $("#slideDown").click(function(){
+            $("#slide").slideDown(); 
+        });
+        $("#slideToggle").click(function(){
+            $("#slide").slideToggle();  $(this).after( "<p></p>" );
+        });
+        $("#fadeIn").click(function(){
+            $("#fade").fadeIn(); 
+        });
+        $("#fadeOut").click(function(){
+            $("#fade").fadeOut();  $(this).after( "<p></p>" );
+        });
+        $("#addClass").click(function(){
+            $("#p_addClass").addClass("button"); 
+        });
+        $("#before").click(function(){
+            $("#baa").before("<p>BEFORE!"); 
+        });
+        $("#after").click(function(){
+            $("#baa").after("<p>AFTER!"); 
+        });
+        $("#append").click(function(){
+            $("#baa").append("<p>append!"); 
+        });
+        $("#html").click(function(){
+            $("#p_html").html("Changed the html value!"); 
+        });
+        $("#attr").click(function(){
+            $("#p_attr").attr("style","font-size: 20px"); 
+        });
+        $("#val").click(function(){
+            $("#p_val").val("Coding Dojo"); 
+        });
+        $("#text").click(function(){
+            $("#p_text").text("Coding Dojo"); 
+        });
+    });
+</script>
+</body>
+
+</html>

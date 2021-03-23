@@ -1,0 +1,45 @@
+body{
+    width: 50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.click{
+    padding: 20px;
+    background-color: burlywood;
+    text-align: center;
+    border: 2px solid rgb(0, 0, 0);
+}
+.click h2 {
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #4385F5;
+    text-decoration: none;
+    border: 2px solid black;
+    color: rgb(220, 251, 255);
+    margin-bottom: 20px;
+    border-radius: 25px;
+    display: inline;
+    font-size: 12px;
+}
+.click p{
+    margin-top: 40px;
+}
+.click span{
+    border: 1px solid black;
+    display: block;
+    
+}
+
+.button{
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #08c58c;
+    text-decoration: none;
+    border: 2px solid black;
+    color: cornsilk;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    font-size: 12px;
+}
