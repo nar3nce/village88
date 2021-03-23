@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="dp_style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <img src="images/github.jpg" alt="">
+                <h2 id="restore">Restore</h2>
+                <img src="images/catandninja.png" alt="">
+            </div>
+
+            <img id="cat1" src="images/dojocat.jpg" alt="" class="style1">
+            <img id="cat2" src="images/heisencat.png" alt="" class="style2">
+            <img id="cat3" src="images/linkcat.png" alt="" class="style1">
+            <img id="cat4" src="images/ironcat.png" alt="" class="style2">
+            <img id="cat5" src="images/defunktocat.png" alt="" class="style1">
+
+            
+        </div>
+        <script>
+            $('#cat1').hover(function(){
+                $(this).attr('src','images/linkcat.png');
+            },
+                function(){
+                    $(this).attr('src','images/dojocat.jpg'); 
+            });
+
+            $('#cat2').hover(function(){
+                $(this).attr('src','images/daftpunk.gif');
+            },
+                function(){
+                    $(this).attr('src','images/heisencat.png'); 
+            });
+
+            $('#cat3').hover(function(){
+                $(this).attr('src','images/stormtroopocat.png');
+            },
+                function(){
+                    $(this).attr('src','images/linkcat.png'); 
+            });
+
+            $('#cat4').hover(function(){
+                $(this).attr('src','images/heisencat.png');
+            },
+                function(){
+                    $(this).attr('src','images/ironcat.png'); 
+            });
+
+            $('#cat5').hover(function(){
+                $(this).attr('src','images/kantana.jpg');
+            },
+                function(){
+                    $(this).attr('src','images/defunktocat.png'); 
+            });
+        </script>
+    </body>
+</html>
