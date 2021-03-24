@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $( "#datepicker, #datepicker2" ).datepicker();
+            
+            $('#form').submit(function(){
+                var name = $('#name');
+                var d1 = $('#datepicker');
+                var d2 = $('#datepicker2');
+                var validate;
+                if(name.val().length == 0){
+                    $("#name_p").html("your name can't be blank!"); 
+                    $("#name_p").css('color','red');
+                    validate = 0;
+                }
+                if(d1.val().length == 0){
+                    $("#d1").html("select date1"); 
+                    $("#d1").css('color','red'); 
+                    validate = 0;
+                }
+                if(d2.val().length == 0){
+                    $("#d2").html("select date2"); 
+                    $("#d2").css('color','red'); 
+                    validate = 0;
+                }
+                if (validate != 0){
+                    alert("thanks " + name.val() + " your cruise leaves on " + d1.val() + " and returns on " +d2.val());
+                }
+                else{
+                    return false;
+                }
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+    <form id="form" action="">
+        <input type="text" name="" id="datepicker">
+        <p id="d1"></p>
+        <input type="text" name="" id="datepicker2">
+        <p id="d2"></p>
+        <input type="text" name="" id="name">
+        <p id="name_p"></p>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
