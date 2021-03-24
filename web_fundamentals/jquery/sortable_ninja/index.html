@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $( "#sortable" ).sortable();
+            $( "#sortable" ).disableSelection();
+        });
+    </script>
+</head>
+<body>
+    <div class="ninja">
+        <ul id="sortable">
+            <li class="ui-state-default">
+                <img id="img0" src="img/ninja4.png" alt="">
+            </li>
+            <li class="ui-state-default">
+                <img id="img1" src="img/ninja3.png" alt="">
+            </li>
+            <li class="ui-state-default">
+                <img id="img2" src="img/ninja1.png" alt="">
+            </li>
+            <li class="ui-state-default">
+                <img id="img3" src="img/ninja2.png" alt="">
+            </li> 
+            <li class="ui-state-default">
+                <img id="img4" src="img/ninja0.png" alt="">
+            </li>   
+        </ul>
+    </div>
+
+</body>
+
+</html>
