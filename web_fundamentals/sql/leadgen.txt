@@ -24,13 +24,16 @@ LEFT JOIN clients ON sites.client_id = clients.client_id
 WHERE leads.registered_datetime BETWEEN '2011-01-01' AND '2011-12-31'
 GROUP BY leads.site_id
 
-SELECT CONCAT(clients.first_name,' ', clients.last_name) as client_name , COUNT(leads.site_id) as num_leads, DATE_FORMAT(leads.registered_datetime, "%M") as month_generated  FROM `leads`
+SELECT CONCAT(clients.first_name,' ', clients.last_name) as client_name, 
+COUNT(leads.site_id) as num_leads, 
+DATE_FORMAT(leads.registered_datetime, "%M") as month_generated  FROM `leads`
 LEFT JOIN sites ON leads.site_id = sites.site_id
 LEFT JOIN clients ON sites.client_id = clients.client_id
 WHERE leads.registered_datetime BETWEEN '2011-01-01' AND '2011-12-31'
 GROUP BY leads.registered_datetime
 
-SELECT CONCAT(clients.first_name,' ', clients.last_name) as client_name , sites.domain_name AS website, COUNT(leads.site_id) as num_leads FROM `leads`
+SELECT CONCAT(clients.first_name,' ', clients.last_name) as client_name, 
+sites.domain_name AS website, COUNT(leads.site_id) as num_leads FROM `leads`
 LEFT JOIN sites ON leads.site_id = sites.site_id
 LEFT JOIN clients ON sites.client_id = clients.client_id
 WHERE leads.registered_datetime BETWEEN '2011-01-01' AND '2011-12-31'
@@ -41,8 +44,8 @@ SELECT CONCAT(clients.first_name,' ', clients.last_name) as client_name,
 SUM(billing.amount) AS total_revenue, DATE_FORMAT(billing.charged_datetime, "%M") AS month, 
 DATE_FORMAT(billing.charged_datetime, "%Y") AS yearr FROM `billing`
 LEFT JOIN clients ON billing.client_id = clients.client_id
-GROUP BY billing.billing_id
-ORDER BY client_name
+GROUP BY clients.client_id, month, yearr
+ORDER BY clients.client_id, month, yearr
 
 SELECT CONCAT(clients.first_name,' ', clients.last_name) as client_name, 
 GROUP_CONCAT(sites.domain_name,' / ') as websites FROM `sites`

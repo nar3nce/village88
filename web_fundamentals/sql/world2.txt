@@ -28,11 +28,13 @@ SELECT country.Name, Language, COUNT(countrylanguage.CountryCode) as total FROM 
 RIGHT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode
 GROUP BY countrylanguage.Language
 
-SELECT country.Name, Language, COUNT(countrylanguage.CountryCode) as total_country, countrylanguage.IsOfficial FROM `country`
+SELECT country.Name, Language, COUNT(countrylanguage.CountryCode) as total_country, 
+countrylanguage.IsOfficial FROM `country`
 RIGHT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode
 WHERE countrylanguage.IsOfficial = 'T'
 GROUP BY countrylanguage.Language   
 
-SELECT country.Continent, COUNT(city.Name) as total_cities, AVG(city.Population) as avg_population FROM `country` 
+SELECT country.Continent, COUNT(city.Name) as total_cities, 
+AVG(city.Population) as avg_population FROM `country` 
 RIGHT JOIN city ON country.Code = city.CountryCode
 GROUP BY country.Continent

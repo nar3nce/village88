@@ -4,68 +4,57 @@ SELECT * FROM `country` WHERE Continent = 'North America' OR Continent = 'Africa
 
 SELECT * FROM `country` WHERE Population > 100000000
 
-SELECT  city.CountryCode, country.Name, country.Continent, city.Population, city.Name FROM `city`
-LEFT JOIN country
-ON city.CountryCode = country.Code
+SELECT  city.CountryCode, country.Name, country.Continent,
+city.Population, city.Name FROM `city`
+LEFT JOIN country ON city.CountryCode = country.Code
 WHERE country.Population > 100000000
 
 SELECT country.Name , countrylanguage.Language FROM `country`
-LEFT JOIN countrylanguage
-ON country.Code = countrylanguage.CountryCode
+LEFT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode
 WHERE countrylanguage.Language = 'Spanish'
 
 SELECT country.Name , countrylanguage.Language FROM `country`
-LEFT JOIN countrylanguage
-ON country.Code = countrylanguage.CountryCode
+LEFT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode
 WHERE countrylanguage.Language = 'Spanish' AND countrylanguage.IsOfficial = 'T'
 
 SELECT country.Name , countrylanguage.Language FROM `country`
-LEFT JOIN countrylanguage
-ON country.Code = countrylanguage.CountryCode
-WHERE countrylanguage.Language = 'Spanish' OR countrylanguage.Language = 'English' AND countrylanguage.IsOfficial = 'T'
+LEFT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode
+WHERE countrylanguage.Language = 'Spanish' OR 
+countrylanguage.Language = 'English' AND countrylanguage.IsOfficial = 'T'
 
-SELECT country.Name , countrylanguage.Language, Percentage, country.Population, ROUND(30 * country.Population / 100) AS P FROM `country`
-LEFT JOIN countrylanguage
-ON country.Code = countrylanguage.CountryCode	
-WHERE countrylanguage.Language = 'Arabic' AND  country.Population > ROUND(30 * country.Population / 100)  AND countrylanguage.IsOfficial = 'F'
-//---
-SELECT country.Name , countrylanguage.Language, Percentage, country.Population, ROUND(30 * country.Population / 100) AS P, ROUND(Percentage * country.Population / 100) as p2 FROM `country`
-LEFT JOIN countrylanguage
-ON country.Code = countrylanguage.CountryCode	
-WHERE countrylanguage.Language = 'Arabic' AND countrylanguage.IsOfficial = 'F'
+SELECT country.Name , countrylanguage.Language, Percentage,
+countrylanguage.IsOfficial FROM `country`
+LEFT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode	
+WHERE Language = 'Arabic' AND percentage > 30  AND isofficial = 'F'
 
 SELECT country.Name , countrylanguage.Language, Percentage FROM `country`
-LEFT JOIN countrylanguage
-ON country.Code = countrylanguage.CountryCode	
-WHERE countrylanguage.Language = 'French' AND  country.Population > ROUND(50 * country.Population / 100)  AND countrylanguage.IsOfficial = 'T'
+LEFT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode	
+WHERE countrylanguage.Language = 'French' 
+AND percentage < 50  AND countrylanguage.IsOfficial = 'T'
 
 SELECT country.Name , countrylanguage.Language, Percentage FROM `country`
-LEFT JOIN countrylanguage
-ON country.Code = countrylanguage.CountryCode	
+LEFT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode	
 WHERE countrylanguage.IsOfficial = 'T'
 ORDER BY countrylanguage.Language
 
-SELECT country.Name as country, city.Name as city, countrylanguage.Language, countrylanguage.IsOfficial FROM `city`
-LEFT JOIN country
-ON city.CountryCode = country.Code
-LEFT JOIN countrylanguage
-ON country.Code = countrylanguage.CountryCode
+SELECT country.Name as country, city.Name as city, countrylanguage.Language,
+countrylanguage.IsOfficial FROM `city`
+LEFT JOIN country ON city.CountryCode = country.Code
+LEFT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode
 WHERE countrylanguage.IsOfficial = 'T'
 ORDER BY city.Population DESC limit 100
 
-SELECT DISTINCT country.Name as country, country.LifeExpectancy, city.Name AS city, city.Population FROM `city`
-LEFT JOIN country
-ON city.CountryCode = country.Code
-LEFT JOIN countrylanguage
-ON country.Code = countrylanguage.CountryCode
+SELECT DISTINCT country.Name as country, country.LifeExpectancy,
+city.Name AS city, city.Population FROM `city`
+LEFT JOIN country ON city.CountryCode = country.Code
+LEFT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode
 WHERE country.LifeExpectancy < 40
 ORDER BY city.Population DESC limit 100
 
-SELECT DISTINCT country.Name as country, city.Name AS city, country.LifeExpectancy FROM `city`
-LEFT JOIN country
-ON city.CountryCode = country.Code
-LEFT JOIN countrylanguage
-ON country.Code = countrylanguage.CountryCode
+SELECT DISTINCT country.Name as country, city.Name AS city, 
+country.LifeExpectancy FROM `city`
+LEFT JOIN country ON city.CountryCode = country.Code
+LEFT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode
 WHERE countrylanguage.Language = 'English'
 ORDER BY country.LifeExpectancy DESC limit 100
 
