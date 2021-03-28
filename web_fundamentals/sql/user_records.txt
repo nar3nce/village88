@@ -1,0 +1,28 @@
+CREATE TABLE `hackerhero_practice`.`users` ( `id` INT(255) NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(255) NOT NULL , `last_name` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `encrypted_password` VARCHAR(255) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , PRIMARY KEY (`id`))
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (NULL, 'fake1', 'fake1', 'fake1', 'fake1', '2021-03-26 10:44:46', '2021-03-26 10:44:46');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (NULL, 'fake2', 'fake2', 'fake2', 'fake2', '2021-03-26 10:44:48', '2021-03-26 10:44:48');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (NULL, 'fake3', 'fake3', 'fake3', 'fake3', '2021-03-26 10:44:50', '2021-03-26 10:44:50');
+
+UPDATE `users` SET `first_name` = 'updated', `last_name` = 'updated', `email` = 'updated', `encrypted_password` = 'updated', `created_at` = '2021-03-31 10:47:08', `updated_at` = '2021-03-31 10:47:08' WHERE `users`.`id` = 1;
+
+UPDATE `users` SET `first_name` = 'updated', `last_name` = 'updated', `email` = 'updated', `encrypted_password` = 'updated', `created_at` = '2021-03-31 10:47:08', `updated_at` = '2021-03-31 10:47:08' WHERE `users`.`last_name` = 'choi';
+
+UPDATE `users` SET `first_name` = 'updated', `last_name` = 'updated', `email` = 'updated', `encrypted_password` = 'updated', `created_at` = '2021-03-31 10:47:08', `updated_at` = '2021-03-31 10:47:08' WHERE `users`.`id` IN (3, 5, 7, 12,19)
+
+DELETE FROM `users` WHERE `users`.`id` = 1
+
+TRUNCATE `hackerhero_practice`.`users`
+
+DROP TABLE `hackerhero_practice`.`users`
+
+ALTER TABLE `users` CHANGE `email` `email_address` VARCHAR(255)
+
+ALTER TABLE `users` CHANGE `id` `id` BIGINT(255) NOT NULL AUTO_INCREMENT
+
+ALTER TABLE `users` ADD `is_active` BOOLEAN
+
+ALTER TABLE `users` ADD `is_active` BOOLEAN NOT NULL
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `encrypted_password`, `created_at`, `updated_at`, `is_active`) VALUES (NULL, 'q', 'q', 'q', 'q', '2021-03-25 11:01:38', '2021-03-26 11:01:38', '0');
+

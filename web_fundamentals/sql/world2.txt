@@ -1,0 +1,38 @@
+SELECT Continent,  SUM(Continent) as total, LifeExpectancy FROM `country` 
+WHERE LifeExpectancy > 70 GROUP BY Continent
+
+SELECT Continent,  SUM(Continent) as total, LifeExpectancy FROM `country` 
+WHERE LifeExpectancy BETWEEN 60 and 70 GROUP BY Continent
+
+SELECT Name, LifeExpectancy FROM `country` WHERE LifeExpectancy > 75 GROUP BY Name
+
+SELECT Name, LifeExpectancy FROM `country` WHERE LifeExpectancy < 40 GROUP BY Name
+
+SELECT Name,  SUM(Population) as total FROM `country` 
+GROUP BY Name ORDER BY total DESC LIMIT 10
+
+SELECT SUM(Population) as total FROM `country`
+
+SELECT Continent, SUM(Population) as total FROM `country` 
+GROUP BY Continent HAVING total > 500000000
+
+SELECT Continent, SUM(Continent) as country, SUM(Population) as total_population, 
+AVG(LifeExpectancy) as avg_life FROM `country`
+GROUP BY Continent HAVING avg_life < 71
+
+SELECT country.Name, COUNT(city.CountryCode) as total FROM `country` 
+LEFT JOIN city ON country.Code = city.CountryCode
+GROUP BY country.Code
+
+SELECT country.Name, Language, COUNT(countrylanguage.CountryCode) as total FROM `country`
+RIGHT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode
+GROUP BY countrylanguage.Language
+
+SELECT country.Name, Language, COUNT(countrylanguage.CountryCode) as total_country, countrylanguage.IsOfficial FROM `country`
+RIGHT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode
+WHERE countrylanguage.IsOfficial = 'T'
+GROUP BY countrylanguage.Language   
+
+SELECT country.Continent, COUNT(city.Name) as total_cities, AVG(city.Population) as avg_population FROM `country` 
+RIGHT JOIN city ON country.Code = city.CountryCode
+GROUP BY country.Continent
