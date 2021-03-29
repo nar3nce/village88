@@ -8,17 +8,21 @@ GROUP BY client_id
 
 SELECT domain_name FROM `sites` WHERE client_id = 10
 
-SELECT client_id, COUNT(domain_name) as num_website, DATE_FORMAT(created_datetime, "%M") AS month , DATE_FORMAT(created_datetime, "%Y") AS yearr FROM `sites` WHERE client_id = 1
+SELECT client_id, COUNT(domain_name) as num_website, DATE_FORMAT(created_datetime, "%M") AS month , 
+DATE_FORMAT(created_datetime, "%Y") AS yearr FROM `sites` WHERE client_id = 1
 GROUP BY domain_name
 
-SELECT client_id, COUNT(domain_name) as num_website, DATE_FORMAT(created_datetime, "%M") AS month , DATE_FORMAT(created_datetime, "%Y") AS yearr FROM `sites` WHERE client_id = 20
+SELECT client_id, COUNT(domain_name) as num_website, DATE_FORMAT(created_datetime, "%M") AS month , 
+DATE_FORMAT(created_datetime, "%Y") AS yearr FROM `sites` WHERE client_id = 20
 GROUP BY domain_name
 
-SELECT domain_name, COUNT(domain_name) as num_website , DATE_FORMAT(created_datetime, "%M %e %Y") as date_genrated  FROM `sites` 
+SELECT domain_name, COUNT(domain_name) as num_website , 
+DATE_FORMAT(created_datetime, "%M %e %Y") as date_genrated  FROM `sites` 
 WHERE created_datetime BETWEEN '2011-01-01' AND '2011-02-15'
 GROUP BY domain_name
 
-SELECT CONCAT(clients.first_name,' ', clients.last_name) as client_name , COUNT(leads.site_id) as num_leads FROM `leads`
+SELECT CONCAT(clients.first_name,' ', clients.last_name) as client_name, 
+COUNT(leads.site_id) as num_leads FROM `leads`
 LEFT JOIN sites ON leads.site_id = sites.site_id
 LEFT JOIN clients ON sites.client_id = clients.client_id
 WHERE leads.registered_datetime BETWEEN '2011-01-01' AND '2011-12-31'
