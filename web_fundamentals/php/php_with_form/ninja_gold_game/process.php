@@ -23,7 +23,7 @@ else if(isset($_POST['house'])){
 }
 
 else if(isset($_POST['casino'])){
-    $gold = rand(5, 10);
+    $gold = rand(0, 50);
 
     $value = array('earn', 'take');
     $action = $value[array_rand($value)];
