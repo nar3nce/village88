@@ -18,9 +18,9 @@
     <h1>Products</h1>
     <table>
         <tr>
-            <th>course name</th>
-            <th>description</th>
-            <th>date</th>
+            <th>product Name</th>
+            <th>product description</th>
+            <th>Price</th>
             <th>action</th>
         </tr>
         <?php
