@@ -29,7 +29,7 @@ class product extends CI_Model {
         $name = $product['name'];
         $description = $product['description'];
         $price = $product['price'];
-        $query = "UPDATE `products` SET `id` = NULL, `name` = '$name', `description` = '$description', `price` = '$price' WHERE `products`.`id` = '$id';"; 
+        $query = "UPDATE `products` SET `name` = '$name', `description` = '$description', `price` = '$price' WHERE `products`.`id` = '$id';"; 
         return $this->db->query($query);
     }
 }
