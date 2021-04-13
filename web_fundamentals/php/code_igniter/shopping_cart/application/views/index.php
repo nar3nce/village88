@@ -33,6 +33,7 @@
             <td><?= $products_['description']; ?></td>
             <td><?= $products_['price']; ?></td>
             <form action="add" method="post">
+            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
             <td><input type="number" name="qty" id="" value="1"></td>
             <input name="id" value="<?= $products_['id']; ?>" type="hidden">
             <td><input type="submit" value="add to cart"></td>
