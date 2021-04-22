@@ -7,6 +7,13 @@
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<title>Pokemon</title>
 </head>
+<style>
+	.pokedex{
+		border: 1px solid black;
+		width: 200px;
+		padding: 20px;
+	}
+</style>
 <script>
 $(document).ready(function(){
 	var get = $.get("https://pokeapi.co/api/v2/pokemon?offset=2&limit=151");
@@ -18,11 +25,36 @@ $(document).ready(function(){
 			})
 		})
 	})
+	$(".pokemon").on("click", function(e){
+		$(".pokedex").html("");
+		var str = e.target.src;
+		var id = str.match(/(\d+)/)[0];
+		var get = $.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+		get.done(function(pokemon){
+			$(".pokedex").append(
+		        "<h1>" +pokemon.name+ "</h1>",
+				'<img src="' + pokemon.sprites.front_default + '">',
+				'<h2>Types</h2>',
+			)
+			pokemon.types.forEach(poke => {
+				$(".pokedex").append(
+		    	'<p>' + poke.type.name + '</p>',
+				'<h2>Height</h2>',
+				'<p>' + pokemon.height + '</p>',
+				'<h2>Weight</h2>',
+				'<p>' + pokemon.weight + '</p>'
+			    )
+			});
+		})
+
+	})
 })
+
 </script>
 <body>
 	<h2>Get That Pokemon</h2>
 	<div class="pokemon">
 	</div>
+	<div class="pokedex"></div>
 </body>
 </html>
